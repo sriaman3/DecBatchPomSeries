@@ -3,18 +3,19 @@ package com.qa.amz.tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.Test;
 
 public class FirstTest {
 	
 	WebDriver driver;
 
-	public static void main(String[] args) throws InterruptedException {
-		
-		FirstTest ft = new FirstTest();
-		ft.doClickOnRegisterButton();
-	}
+	/*
+	 * public static void main(String[] args) throws InterruptedException {
+	 * 
+	 * FirstTest ft = new FirstTest(); ft.doClickOnRegisterButton(); }
+	 */
 	
-	
+	@Test
 	public void doClickOnRegisterButton() throws InterruptedException {
 		
 		driver = new EdgeDriver();	//top casting
