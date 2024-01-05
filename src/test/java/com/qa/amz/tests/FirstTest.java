@@ -5,6 +5,8 @@ import java.net.URL;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -23,12 +25,11 @@ public class FirstTest {
 	@Test
 	public void doClickOnRegisterButton() throws InterruptedException {
 		
-		EdgeOptions options = new EdgeOptions();
-		//options.addArguments(Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--start-maximized], extensions: []}});
-		options.addArguments("--start-maximized");
-		options.setBinary("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe");
-		
-		driver = new EdgeDriver(options);	//top casting
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--headless");
+		driver = new ChromeDriver(options);
 		
 		driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
 		
