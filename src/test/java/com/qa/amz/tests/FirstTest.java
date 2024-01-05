@@ -28,7 +28,7 @@ public class FirstTest {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
-		options.addArguments("--headless");
+		//options.addArguments("--headless");
 		driver = new ChromeDriver(options);
 		
 		driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
