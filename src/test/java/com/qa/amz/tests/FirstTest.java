@@ -26,8 +26,9 @@ public class FirstTest {
 		EdgeOptions options = new EdgeOptions();
 		//options.addArguments(Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--start-maximized], extensions: []}});
 		options.addArguments("--start-maximized");
+		options.setBinary("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe");
 		
-		driver = new EdgeDriver();	//top casting
+		driver = new EdgeDriver(options);	//top casting
 		
 		driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
 		
