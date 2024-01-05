@@ -3,6 +3,8 @@ package com.qa.amz.tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
 public class FirstTest {
@@ -18,7 +20,9 @@ public class FirstTest {
 	@Test
 	public void doClickOnRegisterButton() throws InterruptedException {
 		
-		driver = new EdgeDriver();	//top casting
+		EdgeOptions options = new EdgeOptions();
+		options.addArguments("--start-maximized");
+		driver = new RemoteWebDriver(options);	//top casting
 		
 		driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
 		
