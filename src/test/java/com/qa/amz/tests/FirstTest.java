@@ -1,6 +1,7 @@
 package com.qa.amz.tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -22,7 +23,7 @@ public class FirstTest {
 		
 		EdgeOptions options = new EdgeOptions();
 		options.addArguments("--start-maximized");
-		driver = new RemoteWebDriver(options);	//top casting
+		driver = new EdgeDriver();	//top casting
 		
 		driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
 		
