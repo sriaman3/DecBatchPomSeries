@@ -34,10 +34,22 @@ jobs:
               chmod +x ./scripts/InstallChrome.sh
                           ./scripts/InstallChrome.sh 
     - name: Print Secret
-      run: |
-          echo  ${{ secrets.PASSWORD }}
-          echo ${{ secrets.USER_ID }}
+      run: echo  '${{ secrets.PASSWORD }}'
+          echo '${{ secrets.USER_ID }}'
     - name: Build with Maven
       run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: chmod
+        run: chmod +x ./scripts/*
+
+      - name: Check
+        run: PASSWORD='${{ secrets.PASSWORD }}' ./scripts/check.sh
+             echo PASSWORD
 
    
