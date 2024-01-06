@@ -33,10 +33,12 @@ jobs:
       run:   |
               chmod +x ./scripts/InstallChrome.sh
                           ./scripts/InstallChrome.sh 
+    
     - name: Print Variable
       env:  
             USERNAME: ${{ env.USERNAME }}
-      run:  echo ${{ USERNAME }}
+      run: |
+        echo $USERNAME | base64 --decode > cert.der
            
 
     - name: Build with Maven
