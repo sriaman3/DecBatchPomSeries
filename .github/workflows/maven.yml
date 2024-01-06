@@ -34,7 +34,6 @@ jobs:
               chmod +x ./scripts/InstallChrome.sh
                           ./scripts/InstallChrome.sh 
     - name: Print Secret
-      with: # Set the secret as an input
       run: |
           echo  ${{ secrets.PASSWORD }}
           echo ${{ secrets.USER_ID }}
