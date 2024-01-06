@@ -34,11 +34,11 @@ jobs:
               chmod +x ./scripts/InstallChrome.sh
                           ./scripts/InstallChrome.sh 
     - name: Print Secret
-      env: 
+      run: 
         PASSWORD: ${{ secrets.PASSWORD }}
         USER_ID: ${{ secrets.USER_ID }}
 
-      run: echo  ${{ PASSWORD }}
+          echo  ${{ PASSWORD }}
           echo ${{ USER_ID }} 
 
     - name: Build with Maven
