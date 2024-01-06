@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-05T14:29:42 IST" name="Default suite" finished-at="2024-01-05T14:29:53 IST" duration-ms="11446">
+  <suite started-at="2024-01-06T07:16:22 IST" name="Default suite" finished-at="2024-01-06T07:16:31 IST" duration-ms="8706">
     <groups>
     </groups>
-    <test started-at="2024-01-05T14:29:42 IST" name="Default test" finished-at="2024-01-05T14:29:53 IST" duration-ms="11446">
+    <test started-at="2024-01-06T07:16:22 IST" name="Default test" finished-at="2024-01-06T07:16:31 IST" duration-ms="8706">
       <class name="com.qa.amz.tests.FirstTest">
-        <test-method signature="doClickOnRegisterButton()[pri:0, instance:com.qa.amz.tests.FirstTest@236e3f4e]" started-at="2024-01-05T14:29:42 IST" name="doClickOnRegisterButton" finished-at="2024-01-05T14:29:53 IST" duration-ms="11395" status="PASS">
+        <test-method signature="doClickOnRegisterButton()[pri:0, instance:com.qa.amz.tests.FirstTest@236e3f4e]" started-at="2024-01-06T07:16:22 IST" name="doClickOnRegisterButton" finished-at="2024-01-06T07:16:31 IST" duration-ms="8676" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doClickOnRegisterButton -->

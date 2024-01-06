@@ -58,7 +58,7 @@ public class FirstTest {
 		
 		String url = driver.getCurrentUrl();
 		
-		if(title.contains("account/register")) {
+		if(url.contains("account/register")) {
 			System.out.println("We are on register page");
 		}
 		
