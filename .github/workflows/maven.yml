@@ -34,9 +34,9 @@ jobs:
               chmod +x ./scripts/InstallChrome.sh
                           ./scripts/InstallChrome.sh 
     - name: Print Variable
-      run:  
+      env:  
             USERNAME: ${{ env.USERNAME }}
-            echo ${{ USERNAME }}
+      run:  echo ${{ USERNAME }}
            
 
     - name: Build with Maven
