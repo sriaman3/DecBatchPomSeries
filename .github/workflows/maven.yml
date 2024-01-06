@@ -34,7 +34,7 @@ jobs:
               chmod +x ./scripts/InstallChrome.sh
                           ./scripts/InstallChrome.sh 
     - name: Print Variable
-      run: echo ${{ variables.USERNAME }}
+      run: echo ${{ env.USERNAME }}
            #echo ${{ secrets.PASSWORD }}
            
 
