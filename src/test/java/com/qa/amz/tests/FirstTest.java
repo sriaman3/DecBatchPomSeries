@@ -5,6 +5,7 @@ import java.net.URL;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -20,6 +21,10 @@ public class FirstTest {
 	 * https://medium.com/@saurabhdube/running-selenium-web-tests-maven-java-with-github-actions-a20cba622af4 (Example)
 	 * 
 	 * https://docs.github.com/en/actions/quickstart
+	 * 
+	 * how to run - https://stackoverflow.com/questions/63003669/how-can-i-see-my-git-secrets-unencrypted
+	 * 
+	 * mvn command - mvn clean test -Dusername="aman@opencart.com" -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml
 	 * 
 	 */
 	
@@ -46,20 +51,29 @@ public class FirstTest {
 		
 		Thread.sleep(2000);
 		
-		driver.findElement(By.xpath("(//*[@id='column-right']//a)[2]")).click();
+		String user = System.getProperty("username");
+		
+		WebElement ele = driver.findElement(By.id("input-email"));
+		ele.sendKeys(user);
+		
+		String password = System.getProperty("password");
+		
+		driver.findElement(By.name("password")).sendKeys(password);
 		
 		Thread.sleep(2000);
 		
+		driver.findElement(By.xpath("//input[@value='Login']")).click();
+		
 		String title = driver.getTitle();
 		
-		if(title.contains("Register Account")) {
-			System.out.println("We are on register page");
+		if(title.contains("My Account")) {
+			System.out.println("We are on account page");
 		}
 		
 		String url = driver.getCurrentUrl();
 		
-		if(url.contains("account/register")) {
-			System.out.println("We are on register page");
+		if(url.contains("account/account")) {
+			System.out.println("We are on account page");
 		}
 		
 	}
