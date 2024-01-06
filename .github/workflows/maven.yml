@@ -35,11 +35,8 @@ jobs:
                           ./scripts/InstallChrome.sh 
     - name: Print Secret
       run: 
-        PASSWORD: ${{ secrets.PASSWORD }}
-        USER_ID: ${{ secrets.USER_ID }}
-
-          echo  ${{ PASSWORD }}
-          echo ${{ USER_ID }} 
+         echo ${{ secrets.PASSWORD }}
+         echo ${{ variables.USERNAME }}
 
     - name: Build with Maven
       run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml
