@@ -38,9 +38,9 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
         USER_ID: ${{ secrets.USER_ID }}
 
-      run: echo  ${{ PASSWORD }} >> secrets.txt
-          echo ${{ USER_ID }} >> secrets.txt
-          
+      run: echo  ${{ PASSWORD }}
+          echo ${{ USER_ID }} 
+
     - name: Build with Maven
       run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml
 
