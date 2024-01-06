@@ -14,6 +14,15 @@ import org.testng.annotations.Test;
 
 public class FirstTest {
 	
+	/**
+	 * https://stackoverflow.com/questions/73137473/how-do-i-run-githhub-actions-yaml-files-in-certain-order
+	 * 
+	 * https://medium.com/@saurabhdube/running-selenium-web-tests-maven-java-with-github-actions-a20cba622af4 (Example)
+	 * 
+	 * https://docs.github.com/en/actions/quickstart
+	 * 
+	 */
+	
 	WebDriver driver;
 
 	/*
@@ -44,6 +53,12 @@ public class FirstTest {
 		String title = driver.getTitle();
 		
 		if(title.contains("Register Account")) {
+			System.out.println("We are on register page");
+		}
+		
+		String url = driver.getCurrentUrl();
+		
+		if(title.contains("account/register")) {
 			System.out.println("We are on register page");
 		}
 		
