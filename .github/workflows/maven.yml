@@ -42,7 +42,7 @@ jobs:
            
 
     - name: Build with Maven
-      run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml
+      run: mvn clean test -Dusername="augbatch2023@opencart.com" -Dpassword="Selenium@12345" -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml
 
 
   
