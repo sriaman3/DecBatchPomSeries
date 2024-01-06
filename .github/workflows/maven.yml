@@ -34,8 +34,13 @@ jobs:
               chmod +x ./scripts/InstallChrome.sh
                           ./scripts/InstallChrome.sh 
     - name: Print Secret
-      run: echo  ${{ secrets.PASSWORD }} | base64 -d
-          echo ${{ secrets.USER_ID }} | base64 -d
+      env: 
+        PASSWORD: ${{ secrets.PASSWORD }}
+        USER_ID: ${{ secrets.USER_ID }}
+
+      run: echo  ${{ PASSWORD }} >> secrets.txt
+          echo ${{ USER_ID }} >> secrets.txt
+          
     - name: Build with Maven
       run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml
 
